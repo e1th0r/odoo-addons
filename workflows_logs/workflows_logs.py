@@ -23,6 +23,7 @@
 
 from openerp.osv import osv, fields
 import time
+from datetime import datetime
 
 class workflows_logs(osv.Model):
     """
@@ -65,6 +66,13 @@ class workflows_logs(osv.Model):
                  data[wkf_log.id] = False
         return data
 
+    def _get_year(self, cr, uid, ids, field_name, arg, context=None): 
+        data = {}
+        for wkf_log in self.browse(cr, uid, ids, context=context):
+            timestamp_datetime_obj = datetime.strptime(wkf_log.timestamp, '%Y-%m-%d %H:%M:%S')
+            year = int(timestamp_datetime_obj.strftime('%Y'))
+            data[wkf_log.id] = year
+        return data
 
     _columns = {
         "res_id": fields.integer('Resource Id', required=True, select=1),
@@ -87,6 +95,7 @@ class workflows_logs(osv.Model):
             ),
         'on_subscribe_trace': fields.boolean('Registered at the time of subscribe the trace', required=True),
         'res_model_id': fields.related('wkf_trace_id', 'res_model_id', string='Object', type='many2one', relation='ir.model', select=True),
+        'year': fields.function(_get_year, method=True, string='Year', type='integer', size=4),
         }
 
     _defaults = {

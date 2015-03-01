@@ -9,6 +9,7 @@
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
       <field name="groups_id" eval="[(4, ref('workflows_logs.group_workflows_logs_manager'))]" />
+      <field name="context">{'search_default_group_timestamp':1, 'search_default_group_object':1}</field>
     </record>
 
     <!-- Workflows Logs, Tree View -->
@@ -21,7 +22,25 @@
     	  <field name="user_id" />
 	  <field name="res_state" />
 	  <field name="timestamp" />
+	  <field name="year" invisible="1" />
     	</tree>
+      </field>
+    </record>
+
+    <!-- Workflows Logs, Filter View -->
+    <record id="workflows_logs_filter_view" model="ir.ui.view">
+      <field name="name">workflows.logs.filter</field>
+      <field name="model">wkf.logs</field>
+      <field name="arch" type="xml">
+	<search string="Workflows Logs">
+	  <filter icon="terp-go-year" string="Current Year" name="year" domain="[('year','=',time.strftime('%%Y'))]" />
+	  <filter string="Last 6 months" name="timestamp" domain="[('timestamp', '&gt;=', (context_today() - datetime.timedelta(167)).strftime('%%Y-%%m-01') )]"/>
+	  <group expand="1" string="Group By...">
+	    <filter name="group_timestamp" string="Month" icon="terp-document-new" context="{'group_by':'timestamp'}"/>
+	    <filter name="group_object" string="Object" icon="terp-document-new" context="{'group_by':'wkf_trace_id'}"/>
+	    <filter name="group_user_id" string="User" icon="terp-document-new" context="{'group_by':'user_id'}"/>
+	  </group>
+	</search>
       </field>
     </record>
 

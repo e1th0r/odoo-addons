@@ -30,12 +30,19 @@ class workflows_traces(osv.Model):
     Traces of workflows of objects created by models
     """
     _name = "wkf.traces"
-    _rec_name = "res_model_id"
+    _rec_name = "res_model_name"
     _description = "Traces of workflows of objects created by models"
 
     _columns = {
         'res_model_id': fields.many2one('ir.model', 'Object', required=True, help="Select object for which you want to generate log."),
-        'state': fields.selection((("draft", "Draft"), ("subscribed", "Subscribed")), "Status", required=True)
+        'state': fields.selection((("draft", "Draft"), ("subscribed", "Subscribed")), "Status", required=True),
+        'res_model_name': fields.related(
+            'res_model_id', 
+            'name', 
+            string='Object name', 
+            type='char', 
+            select=True,
+            ),
         }
 
     _defaults = {
