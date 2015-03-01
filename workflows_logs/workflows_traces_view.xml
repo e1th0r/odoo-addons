@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!-- Action for Views of workflows traces -->
+    <record id="workflows_traces_action" model="ir.actions.act_window">
+      <field name="name">Workflows Traces</field>
+      <field name="res_model">wkf.traces</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="groups_id" eval="[(4, ref('workflows_logs.group_workflows_logs_manager'))]" />
+    </record>
+
+    <!-- Workflows Traces, Tree View -->
+    <record model="ir.ui.view" id="workflows_traces_tree_view">
+      <field name="name">Workflows Traces</field>
+      <field name="model">wkf.traces</field>
+      <field name="arch" type="xml">
+    	<tree string="Workflows Traces">
+    	  <field name="res_model_id" />
+    	  <field name="state" />
+    	</tree>
+      </field>
+    </record>
+
+    <!-- Workflows Traces, Form View -->
+    <record id="workflows_traces_form_view" model="ir.ui.view">
+      <field name="name">Workflows Traces</field>
+      <field name="model">wkf.traces</field>
+      <field name="arch" type="xml">
+    	<form string="Workflows Traces" version="7.0">
+    	  <sheet>
+	    <group>
+	      <field name="res_model_id" />
+	      <field name="state" />
+	    </group>
+    	  </sheet>
+    	</form>
+      </field>
+    </record>
+
+    <!-- Parent Menu of Workflows logs -->
+    <menuitem id="menu_workflows_logs" name="Workflows Logs" parent="base.menu_reporting" sequence="1" groups="group_workflows_logs_manager" />
+
+    <!-- Menu Workflows Traces-->
+    <menuitem action="workflows_traces_action" id="menu_workflows_traces" name="Workflows Traces" parent="menu_workflows_logs" groups="group_workflows_logs_manager" />
+
+  </data>
+</openerp>

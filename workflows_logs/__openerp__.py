@@ -26,7 +26,6 @@
     'version': '0.1',
     'author': u'Asociación Cooperativa Hoatzin de Base Tecnológica R.L.',
     'website': 'hoatzin.org',
-#    'category': '',
     'description':
         u"""
         Logs of Workflows
@@ -35,6 +34,10 @@
         'base'
     ],
     'data': [
+        'security/workflows_logs_security.xml',
+        'security/ir.model.access.csv',
+        'workflows_traces_view.xml',
+        'workflows_logs_view.xml'
     ],
     'demo': [
         ],

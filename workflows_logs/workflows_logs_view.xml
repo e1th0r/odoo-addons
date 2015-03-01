@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+    <!-- Action for Views of workflows logs -->
+    <record id="workflows_logs_action" model="ir.actions.act_window">
+      <field name="name">Workflows Logs</field>
+      <field name="res_model">wkf.logs</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="groups_id" eval="[(4, ref('workflows_logs.group_workflows_logs_manager'))]" />
+    </record>
+
+    <!-- Workflows Logs, Tree View -->
+    <record model="ir.ui.view" id="workflows_logs_tree_view">
+      <field name="name">Workflows Logs</field>
+      <field name="model">wkf.logs</field>
+      <field name="arch" type="xml">
+    	<tree string="Workflows Logs" create="false">
+    	  <field name="res_name" />
+    	  <field name="user_id" />
+	  <field name="res_state" />
+	  <field name="timestamp" />
+    	</tree>
+      </field>
+    </record>
+
+    <!-- Workflows Logs, Form View -->
+    <record id="workflows_logs_form_view" model="ir.ui.view">
+      <field name="name">Workflows Logs</field>
+      <field name="model">wkf.logs</field>
+      <field name="arch" type="xml">
+    	<form string="Workflows Logs" version="7.0" create="false" edit="false">
+    	  <sheet>
+	    <group col="6">
+	      <group colspan="2">
+		<field name="timestamp" readonly="1" />
+		<field name="act_id" readonly="1" />
+		<field name="res_state" readonly="1" />
+		<field name="res_id" readonly="1" />
+	      </group>
+	      <group colspan="4">
+		<field name="user_id" readonly="1" />
+		<field name="res_name" readonly="1" />
+		<field name="res_model_id" readonly="1" />
+		<field name="on_subscribe_trace" readonly="1" />
+	      </group>
+	    </group>
+    	  </sheet>
+    	</form>
+      </field>
+    </record>
+
+    <!-- Menu Workflows Logs-->
+    <menuitem action="workflows_logs_action" id="menu_workflows_logs_child" name="Workflows Logs" parent="menu_workflows_logs" groups="group_workflows_logs_manager" />
+
+  </data>
+</openerp>

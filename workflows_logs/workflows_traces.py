@@ -30,6 +30,7 @@ class workflows_traces(osv.Model):
     Traces of workflows of objects created by models
     """
     _name = "wkf.traces"
+    _rec_name = "res_model_id"
     _description = "Traces of workflows of objects created by models"
 
     _columns = {
@@ -66,9 +67,7 @@ class workflows_traces(osv.Model):
                                             wkf_log_data['user_id'] = uid
                                             wkf_log_data['res_id'] = workitem.inst_id.res_id
                                             wkf_log_data['wkf_trace_id'] = wkf_trace_id
-                                            #wkf_log['timestamp'] =
-                                            #wkf_log['res_state'] =
-                                            #raise osv.except_osv('Test', wkf_log)
+                                            wkf_log_data['on_subscribe_trace'] = True
                                             wkf_logs.create(cr, SUPERUSER_ID, wkf_log_data, context=context)
                                 cr.commit()
                                 return wkf_trace_id

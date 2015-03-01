@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+  <!-- Group Workflows Logs Manager -->  
+  <record id="group_workflows_logs_manager" model="res.groups">
+    <field name="name">Manager of Logs of Workflows</field>
+    <field name="comment">
+      User group to manage the logs of changes of workflows.
+    </field>
+    <field name="category_id" ref="base.module_category_hidden"/>
+    <field name="users" eval="[(4, ref('base.user_root'))]" />
+  </record>
+
+</data>
+</openerp>

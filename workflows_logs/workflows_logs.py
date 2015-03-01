@@ -29,6 +29,7 @@ class workflows_logs(osv.Model):
     Logs of workflows of objects created by models
     """
     _name = 'wkf.logs'
+    _rec_name = "res_name"
     _table = 'workflows_logs'
     _description = "Logs of workflows of objects created by models"
 
@@ -76,17 +77,21 @@ class workflows_logs(osv.Model):
             method=True, 
             string='Resource State', 
             type='char',
+            store=True
             ),
         'res_name': fields.function(
             _get_res_name, 
             method=True, 
             string='Resource Name', 
             type='char',
-            )
+            ),
+        'on_subscribe_trace': fields.boolean('Registered at the time of subscribe the trace', required=True),
+        'res_model_id': fields.related('wkf_trace_id', 'res_model_id', string='Object', type='many2one', relation='ir.model', select=True),
         }
 
     _defaults = {
-        "timestamp": lambda *a: time.strftime("%Y-%m-%d %H:%M:%S")
+        'timestamp': lambda *a: time.strftime("%Y-%m-%d %H:%M:%S"),
+        'on_subscribe_trace': False
     }
 
     _order = "timestamp desc"

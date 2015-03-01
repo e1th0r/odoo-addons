@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_workflows_traces,workflows.traces,model_wkf_traces,workflows_logs.group_workflows_logs_manager,1,1,1,1
+access_workflows_logs,workflows.logs,model_wkf_logs,workflows_logs.group_workflows_logs_manager,1,0,0,1
