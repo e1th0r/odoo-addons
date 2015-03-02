@@ -1,0 +1,203 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* workflows_logs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-02 04:48+0000\n"
+"PO-Revision-Date: 2015-03-02 00:40-0430\n"
+"Last-Translator: Manuel Márquez <punketo28@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_VE\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: workflows_logs
+#: selection:wkf.traces,state:0
+msgid "Subscribed"
+msgstr "Activada"
+
+#. module: workflows_logs
+#: field:wkf.logs,act_id:0
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: workflows_logs
+#: field:wkf.logs,wkf_trace_id:0
+msgid "Traces of workflow"
+msgstr "Trazas de flujo de trabajo"
+
+#. module: workflows_logs
+#: field:wkf.traces,state:0
+msgid "Status"
+msgstr "Estado"
+
+#. module: workflows_logs
+#: view:wkf.logs:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: workflows_logs
+#: selection:wkf.traces,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: workflows_logs
+#: model:ir.model,name:workflows_logs.model_wkf_logs
+msgid "Logs of workflows of objects created by models"
+msgstr "Registro de cambios de los flujos de trabajos"
+
+#. module: workflows_logs
+#: field:wkf.traces,res_model_name:0
+msgid "Object name"
+msgstr "Nombre del modelo"
+
+#. module: workflows_logs
+#: field:wkf.logs,on_subscribe_trace:0
+msgid "Registered at the time of subscribe the trace"
+msgstr "Registrado al momento de activar la traza"
+
+#. module: workflows_logs
+#: field:wkf.logs,res_id:0
+msgid "Resource Id"
+msgstr "ID del Recurso"
+
+#. module: workflows_logs
+#: model:ir.actions.act_window,name:workflows_logs.workflows_logs_action
+#: model:ir.ui.menu,name:workflows_logs.menu_workflows_logs
+#: model:ir.ui.menu,name:workflows_logs.menu_workflows_logs_child
+#: view:wkf.logs:0
+msgid "Workflows Logs"
+msgstr "Registro de Cambios de los Flujos de Trabajo"
+
+#. module: workflows_logs
+#: view:wkf.logs:0 field:wkf.logs,res_model_id:0
+#: field:wkf.traces,res_model_id:0
+msgid "Object"
+msgstr "Modelo"
+
+#. module: workflows_logs
+#: model:res.groups,name:workflows_logs.group_workflows_logs_manager
+msgid "Manager of Logs of Workflows"
+msgstr ""
+"Usuario Encargado de Gestionar los Registros de Cambios de los Flujos de "
+"Trabajo"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:106
+#, python-format
+msgid "For now it is not supported track more than one workflow by model."
+msgstr ""
+"Por ahora no es posible hacer seguimiento a mas de un flujo de trabajo por "
+"modelo."
+
+#. module: workflows_logs
+#: help:wkf.traces,res_model_id:0
+msgid "Select object for which you want to generate log."
+msgstr "Seleccione el modelo para el cual quiere crear la traza."
+
+#. module: workflows_logs
+#: field:wkf.logs,timestamp:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: workflows_logs
+#: view:wkf.logs:0 field:wkf.logs,user_id:0
+msgid "User"
+msgstr "Usuario"
+
+#. module: workflows_logs
+#: field:wkf.logs,res_name:0
+msgid "Resource Name"
+msgstr "Nombre del Recurso"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:108
+#, python-format
+msgid "There isn't a workflow for this model!"
+msgstr "¡ No existe un flujo de trabajo para este modelo !"
+
+#. module: workflows_logs
+#: field:wkf.logs,res_state:0
+msgid "Resource State"
+msgstr "Estado del Recurso"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:110
+#, python-format
+msgid "The model doesn't exist!"
+msgstr "¡ El modelo no existe !"
+
+#. module: workflows_logs
+#: model:ir.model,name:workflows_logs.model_wkf_traces
+msgid "Traces of workflows of objects created by models"
+msgstr "Trazas de flujos de trabajo de los objetos"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:53
+#: sql_constraint:wkf.traces:0
+#, python-format
+msgid "There is already a trace for this model!"
+msgstr "¡ Ya existe una traza para este modelo !"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:108
+#: code:addons/workflows_logs/workflows_traces.py:110
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: workflows_logs
+#: view:wkf.logs:0
+msgid "Current Year"
+msgstr "Año Actual"
+
+#. module: workflows_logs
+#: model:res.groups,comment:workflows_logs.group_workflows_logs_manager
+msgid ""
+"\n"
+"      User group to manage the logs of changes of workflows.\n"
+"    "
+msgstr ""
+"\n"
+"      Grupo de usuarios encargado de gestionar los registros de cambios de "
+"los flujos de trabajo.\n"
+"    "
+
+#. module: workflows_logs
+#: view:wkf.logs:0
+msgid "Month"
+msgstr "Mes"
+
+#. module: workflows_logs
+#: model:ir.actions.act_window,name:workflows_logs.workflows_traces_action
+#: model:ir.ui.menu,name:workflows_logs.menu_workflows_traces
+#: view:wkf.traces:0
+msgid "Workflows Traces"
+msgstr "Trazas de Flujos de Trabajo"
+
+#. module: workflows_logs
+#: code:addons/workflows_logs/workflows_traces.py:106
+#, python-format
+msgid "Warning"
+msgstr "Advertencia"
+
+#. module: workflows_logs
+#: view:wkf.traces:0
+msgid "Subscribe Trace"
+msgstr "Activar Traza"
+
+#. module: workflows_logs
+#: field:wkf.logs,year:0
+msgid "Year"
+msgstr "Año"
+
+#. module: workflows_logs
+#: view:wkf.logs:0
+msgid "Last 6 months"
+msgstr "Últimos seis meses"
