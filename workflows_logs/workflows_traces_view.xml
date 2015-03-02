@@ -28,13 +28,26 @@
       <field name="name">Workflows Traces</field>
       <field name="model">wkf.traces</field>
       <field name="arch" type="xml">
-    	<form string="Workflows Traces" version="7.0">
+    	<form string="Workflows Traces" version="7.0" edit="false">
+	  <header>
+
+	    <button 
+		name="subscribe" 
+		string="Subscribe Trace" 
+		class="oe_highlight" 
+		type="workflow" 
+		states="draft" 
+		groups="workflows_logs.group_workflows_logs_manager" />
+
+	  </header>
+
     	  <sheet>
 	    <group>
 	      <field name="res_model_id" />
 	      <field name="state" />
 	    </group>
     	  </sheet>
+
     	</form>
       </field>
     </record>

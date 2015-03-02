@@ -100,7 +100,7 @@ class workflows_logs(osv.Model):
 
     _defaults = {
         'timestamp': lambda *a: time.strftime("%Y-%m-%d %H:%M:%S"),
-        'on_subscribe_trace': False
+        'on_subscribe_trace': False,
     }
 
     _order = "timestamp desc"

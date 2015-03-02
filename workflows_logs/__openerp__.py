@@ -36,6 +36,7 @@
     'data': [
         'security/workflows_logs_security.xml',
         'security/ir.model.access.csv',
+        'workflows_logs_workflow.xml',
         'workflows_traces_view.xml',
         'workflows_logs_view.xml'
     ],

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      
+      <record id="wkf_workflows_traces" model="workflow">
+	<field name="name">wkf.traces</field>
+	<field name="osv">wkf.traces</field>
+	<field name="on_create">True</field>
+      </record>
+
+      <!-- Activities -->
+      <record id="wkf_traces_act_draft" model="workflow.activity">
+	<field name="wkf_id" ref="wkf_workflows_traces" />
+	<field name="flow_start">True</field>
+	<field name="name">draft</field>
+      </record>
+
+      <record id="wkf_traces_act_subscribed" model="workflow.activity">
+	<field name="wkf_id" ref="wkf_workflows_traces" />
+	<field name="name">subscribed</field>
+	<field name="kind">function</field>
+	<field name="action">write({'state': 'subscribed'})</field>
+	<field name="flow_stop">True</field>
+      </record>
+
+      <!-- Transistions -->
+      <record id="trans_wkf_traces_draft_subscribed" model="workflow.transition">
+	<field name="act_from" ref="wkf_traces_act_draft" />
+	<field name="act_to" ref="wkf_traces_act_subscribed" />
+	<field name="signal">subscribe</field>
+	<field name="group_id" ref="group_workflows_logs_manager" />
+      </record>
+
+    </data>
+</openerp>
