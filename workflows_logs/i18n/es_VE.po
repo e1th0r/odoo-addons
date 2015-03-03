@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-02 04:48+0000\n"
-"PO-Revision-Date: 2015-03-03 11:09-0430\n"
+"PO-Revision-Date: 2015-03-03 11:17-0430\n"
 "Last-Translator: Hector Colina <hcolina@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr ""
 #, python-format
 msgid "For now it is not supported track more than one workflow by model."
 msgstr ""
-"Por ahora no es posible hacer seguimiento a mas de un flujo de trabajo por "
+"Por ahora no es posible hacer seguimiento a más de un flujo de trabajo por "
 "modelo."
 
 #. module: workflows_logs
@@ -121,7 +121,7 @@ msgstr "Nombre del Recurso"
 #: code:addons/workflows_logs/workflows_traces.py:108
 #, python-format
 msgid "There isn't a workflow for this model!"
-msgstr "¡ No existe un flujo de trabajo para este modelo !"
+msgstr "¡No existe un flujo de trabajo para este modelo!"
 
 #. module: workflows_logs
 #: field:wkf.logs,res_state:0
@@ -132,7 +132,7 @@ msgstr "Estado del Recurso"
 #: code:addons/workflows_logs/workflows_traces.py:110
 #, python-format
 msgid "The model doesn't exist!"
-msgstr "¡ El modelo no existe !"
+msgstr "¡El modelo no existe!"
 
 #. module: workflows_logs
 #: model:ir.model,name:workflows_logs.model_wkf_traces
@@ -144,7 +144,7 @@ msgstr "Trazas de flujos de trabajo de los objetos"
 #: sql_constraint:wkf.traces:0
 #, python-format
 msgid "There is already a trace for this model!"
-msgstr "¡ Ya existe una traza para este modelo !"
+msgstr "¡Ya existe una traza para este modelo!"
 
 #. module: workflows_logs
 #: code:addons/workflows_logs/workflows_traces.py:108
@@ -167,7 +167,7 @@ msgid ""
 msgstr ""
 "\n"
 "      Grupo de usuarios encargado de gestionar los registros de cambios de "
-"los flujos de trabajo.\n"
+"los flujos de trabajos.\n"
 "    "
 
 #. module: workflows_logs
@@ -180,7 +180,7 @@ msgstr "Mes"
 #: model:ir.ui.menu,name:workflows_logs.menu_workflows_traces
 #: view:wkf.traces:0
 msgid "Workflows Traces"
-msgstr "Trazas de Flujos de Trabajo"
+msgstr "Trazas de Flujos de Trabajos"
 
 #. module: workflows_logs
 #: code:addons/workflows_logs/workflows_traces.py:106
